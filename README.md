@@ -12,8 +12,13 @@ Analytical questions:
 6. Which is the most downvoted definition?  
 
 **Moderate**  
-7. Which author has contributed the highest number of meanings?  
-8. Which all tags are most widely used?  
+7. Which all tags are most widely used?  
+8. Which word has with highest number of meanings?  
+9a. What number of records have their 'tags' attribute empty?    
+9b. Check data types  
+10. Which is the most upvoted definition?  
+11. Which is the most downvoted definition? 
+12. Which author has contributed the highest number of meanings?     
 9a. Which word has with highest number of meanings?  
 9b. Which word has the overall highest number of upvotes?  
 10. Which word has the overall highest number of downvotes?  
