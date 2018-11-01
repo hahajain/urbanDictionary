@@ -17,8 +17,8 @@ Analytical questions:
 9a. Which word has with highest number of meanings?  
 9b. Which word has the overall highest number of upvotes?  
 10. Which word has the overall highest number of downvotes?  
-11. What are the most popular tags? (Popular = have most words)
-12. What are the most successful tags? (Successful = have words with most upvotes)
+11. What are the most popular tags? (Popular = have most words)  
+12. What are the most successful tags? (Successful = have words with most upvotes)  
 
 **Challenging**  
 1. Based on number of upvotes and downvotes, how can we rank the meanings of a particular word?  
