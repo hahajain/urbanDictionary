@@ -16,15 +16,13 @@ Analytical questions we attempt to answer:
 
 7. Which all tags are most widely used?  
 8. Which word has with highest number of meanings?    
-9a. Which word has with highest number of meanings?   
-9b. Which word has the overall highest number of upvotes?  
-10. Which word has the overall highest number of downvotes?  
-11. What are the most popular tags? (Popular = have most words)  
-12. What are the most successful tags? (Successful = have words with most upvotes)  
+9. Which word has with highest number of meanings?   
+10. Which word has the overall highest number of upvotes?  
+11. Which word has the overall highest number of downvotes?  
+12. What are the most popular tags? (Popular = have most words)  
+13. What are the most successful tags? (Successful = have words with most upvotes)  
 
 **Challenging** 
 
-1. Based on number of upvotes and downvotes, how can we rank the meanings of a particular word?  
-2. How do urbaners relate words, i.e which words are synonymous?
-
- 
+14. Based on number of upvotes and downvotes, how can we rank the meanings of a particular word?  
+15. How do urbaners relate words, i.e which words are synonymous?
