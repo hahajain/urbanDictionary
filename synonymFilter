@@ -1,0 +1,33 @@
+$ curl -XPUT 'localhost:9200/synoindex/?pretty' -H 'Content-Type: application/json' -d'
+{
+    "settings": {
+        "index" : {
+            "analysis" : {
+                "filter" : {
+                    "synonym_filter" : {
+                        "type" : "synonym",
+                        "synonyms" : [
+                            ""
+                        ]
+                    }
+                },
+                "analyzer" : {
+                    "synonym_analyzer" : {
+                        "tokenizer" : "standard",
+                        "filter" : ["lowercase", "synonym_filter"] 
+                    }
+                }
+            }
+        }
+    },
+    "mappings": {
+        "doc": {
+            "properties": {
+              "title": { 
+                "type": "text",
+                "analyzer": "synonym_analyzer"
+              }
+            }
+        }
+    }
+}'
