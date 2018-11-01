@@ -27,12 +27,12 @@ db.urbanDictionary.count({"author" : null})
 db.urbanDictionary.count({"tags" : []}) #734948
 
 # 4. Check data types for important attributes
-db.urbanDictionary.count({_id : { $not : {$type : "objectId"}}}); 0
-db.urbanDictionary.count({lowercase_word : { $not : {$type : "string"}}}); 0
-db.urbanDictionary.count({tags : { $not : {$type : "array"}}}); 0
-db.urbanDictionary.count({thumbs_up : { $not : {$type : "int"}}}); 0
-db.urbanDictionary.count({thumbs_down : { $not : {$type : "int"}}}); 0
-db.urbanDictionary.count({author : { $not : {$type : "string"}}})
+db.urbanDictionary.count({"_id" : { "$not" : {$type : "objectId"}}}); 0
+db.urbanDictionary.count({"lowercase_word" : { "$not" : {$type : "string"}}}); 0
+db.urbanDictionary.count({"tags" : { "$not" : {$type : "array"}}}); 0
+db.urbanDictionary.count({"thumbs_up" : { "$not" : {$type : "int"}}}); 0
+db.urbanDictionary.count({"thumbs_down" : { "$not" : {$type : "int"}}}); 0
+db.urbanDictionary.count({"author" : { "$not" : {$type : "string"}}})
 
 # 5. Which is the most upvoted definition?
 db.urbanDictionary.find().sort({"thumbs_up":-1}).limit(1).pretty()
@@ -49,10 +49,10 @@ db.urbanDictionary.aggregate([{"$sortByCount" : "$author"}], {"allowDiskUse" : t
 db.urbanDictionary.aggregate([{"$match" : {"author" : {"$nin" :["Anonymous","anonymous" ]}}},{"$sortByCount":"$author"},{"$limit":1}],{"allowDiskUse":true})
 
 # 8. Which tags are most widely used?
-db.urbanDictionary.aggregate([{"$unwind" : "$tags"} , {"$sortByCount" : "$tags"}], {"allowDiskUse" : true})
+db.urbanDictionary.aggregate([{"$unwind" : "$tags"} , {"$sortByCount" : "$tags"}], allowDiskUse = True)
 
 # 9. Which word has the highest number of definitions?
-db.urbanDictionary.aggregate([{"$sortByCount" : "$lowercase_word"}, {"$limit":1}], {"allowDiskUse" : true})
+db.urbanDictionary.aggregate([{"$sortByCount" : "$lowercase_word"}, {"$limit":1}], allowDiskUse = True)
 
 # 10. Which word has the overall highest number of upvotes?
 query10 = [
@@ -62,7 +62,7 @@ query10 = [
         "total_upvotes": { $sum: "$thumbs_up" },
       }
     },
-    {"$sort": {total_upvotes:-1}},
+    {"$sort": {"total_upvotes":-1}},
     {"$limit": 10}
   ]
 db.urbanDictionary.aggregate(query10, allowDiskUse = True)
@@ -75,7 +75,7 @@ query11 = [
         "total_downvotes": { $sum: "$thumbs_down" },
       }
     },
-    {"$sort": {total_upvotes:-1}},
+    {"$sort": {"total_upvotes":-1}},
     {"$limit": 10}
   ]
 db.urbanDictionary.aggregate(query11, allowDiskUse = True)
