@@ -13,14 +13,6 @@ Analytical questions:
 
 **Moderate**
 7. Which all tags are most widely used?  
-8. Which word has the highest number of meanings?  
-9a. What number of records have their 'tags' attribute empty?    
-4. Check data types  
-5. Which is the most upvoted definition?  
-6. Which is the most downvoted definition?  
-
-**Moderate**
-7. Which all tags are most widely used?  
 8. Which word has with highest number of meanings?    
 9a. Which word has with highest number of meanings?   
 9b. Which word has the overall highest number of upvotes?  
