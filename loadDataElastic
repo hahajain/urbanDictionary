@@ -1,0 +1,177 @@
+
+curl -X PUT "localhost:9200/synoindex/doc/1?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 8093865,
+	"word" : "deviled eggs",
+	"definition" : "When you drink a bottle of hot sauce wait 1 hour then Than pry your girlfriends sleeping eyes open and shit equally on each eye ball you may garnish around eye with chillie powder or parsley if for looks if desired.",
+	"thumbs_up" : 39,
+	"author" : "blumpkin25",
+	"thumbs_down" : 1
+}'
+
+curl -X PUT "localhost:9200/synoindex/doc/2?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 1742259,
+	"word" : "pumpkin",
+	"definition" : "West Virginias halloween pastime.\r\n\r\n",
+	"thumbs_up" : 9,
+	"author" : "JesusFuckinChrist",
+	"thumbs_down" : 27
+}'
+
+
+curl -X PUT "localhost:9200/synoindex/doc/3?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 1511729,
+	"word" : "John Carpenter",
+	"definition" : "The best damn director in the universe.  He created Snake Plissken, Jack Burton, the greasynoindex 80s synth scores and outdid Howard Hawks...twice.",
+	"thumbs_up" : 70,
+	"author" : "Phantom Definition Writer",
+	"thumbs_down" : 4
+}'
+
+
+curl -X PUT "localhost:9200/synoindex/doc/4?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 142884,
+	"word" : "zombie",
+	"definition" : "One who has attained the pinnacle of coolness. A total Badass",
+	"thumbs_up" : 7,
+	"author" : "Zombie",
+	"thumbs_down" : 19
+}'
+
+
+curl -X PUT "localhost:9200/synoindex/doc/6?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 476794,
+	"word" : "slasher",
+	"definition" : "One who uses razors, knives and other sharp objects to cut themselves in order to deal with pain or depression.",
+	"thumbs_up" : 16,
+	"author" : "Miss Ann Thrope",
+	"thumbs_down" : 30
+}'
+
+curl -X PUT "localhost:9200/synoindex/doc/7?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 3403883,
+	"word" : "texas chainsaw massacre (remake)",
+	"definition" : "the most br00tal movie since the original",
+	"thumbs_up" : 10,
+	"author" : "reedradd x",
+	"thumbs_down" : 15
+}'
+
+curl -X PUT "localhost:9200/synoindex/doc/8?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 283206,
+	"word" : "halloween",
+	"definition" : "Annual celebration of the demon world, most popular in the U.S. by multitudes of ignorant populus.",
+	"thumbs_up" : 22,
+	"author" : "larstait",
+	"thumbs_down" : 33
+}'
+
+
+curl -X PUT "localhost:9200/synoindex/doc/50?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 876232,
+	"word" : "cool",
+	"definition" : "Cool is a position, you can look cool, act cool, and sound cool, cool is most commomly connected with the look, if you can look cool you can get anywhere in life, looking cool is more important than going to university. If you dont know what looking cool is like, it dosnt matter because youll never be it. And thats whats important.",
+	"thumbs_up" : 26,
+	"author" : "Switch",
+	"thumbs_down" : 31
+}'
+
+
+curl -X PUT "localhost:9200/synoindex/doc/51?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 4716732,
+	"word" : "Brutal",
+	"definition" : "The American Slang word for something that is very metal. \r\nTaken by other scenes such as \"Hardcore\", and \"Scene\", it was originally used my Metalheads, and should stay that way.",
+	"thumbs_up" : 120,
+	"author" : "DJ Deathday",
+	"thumbs_down" : 40
+}'
+
+
+
+curl -X PUT "localhost:9200/synoindex/doc/52?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 221523,
+	"word" : "death",
+	"definition" : "the cure for life",
+	"thumbs_up" : 9654,
+	"author" : "wouldnt you like to know",
+	"thumbs_down" : 841
+}'
+
+
+
+curl -X PUT "localhost:9200/synoindex/doc/53?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 1420974,
+	"word" : "metallica",
+	"definition" : "easily the greasynoindex band in the world 11 albums. James Hetfield - Vocals, rhythm guitar. Lars Ulrich - drums. Kirk Hammet - lead guitar. Robert Trujillo  bass",
+	"thumbs_up" : 1266,
+	"author" : "irishmoron",
+	"thumbs_down" : 549
+}'
+
+
+
+curl -X PUT "localhost:9200/synoindex/doc/54?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 10760,
+	"word" : "wicked",
+	"definition" : "MASS. version of the word \"really\"\r\n\r\n",
+	"thumbs_up" : 840,
+	"author" : "brian",
+	"thumbs_down" : 521
+}'
+
+
+
+curl -X PUT "localhost:9200/synoindex/doc/58?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 362966,
+	"word" : "rock music",
+	"definition" : "Music that talks about more things than falling in love and going to parties like all that pop and rap crap music does. Music that actually has instuments playing on stage, and the singer doesnt have a computerized voice.  Some awesome rock bands include 12 Stones, Chevelle, Linkin Park, and Trapt.",
+	"thumbs_up" :97,
+	"author" : "SammieJo",
+	"thumbs_down" : 22
+}'
+
+
+
+curl -X PUT "localhost:9200/synoindex/doc/55?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 298833,
+	"word" : "wicked",
+	"definition" : "The biggest metal band on the planet, but I agree, some people just cant appreciate the sheer genius of their music.",
+	"thumbs_up" : 1456,
+	"author" : "vinny",
+	"thumbs_down" : 206
+}'
+
+curl -X PUT "localhost:9200/synoindex/doc/56?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 919085,
+	"word" : "led zepplin",
+	"definition" : "is spelt Led Zeppelin.\r\nRead, cover, write, check.",
+	"thumbs_up" :72,
+	"author" : "Smi",
+	"thumbs_down" : 22
+}'
+
+curl -X PUT "localhost:9200/synoindex/doc/56?pretty" -H 'Content-Type: application/json' -d'
+{
+	"defid" : 872036,
+	"word" : "led zeppelin",
+	"definition" : "the only band that ever made me want to cry because they were so damn good. they are the epitome of talent and kick assness. no band will ever ever ever compare.",
+	"thumbs_up" :50,
+	"author" : "Jorge Alvarez",
+	"thumbs_down" : 22
+}'
+
+
