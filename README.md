@@ -11,7 +11,7 @@ Analytical questions:
 5. Which is the most upvoted definition?  
 6. Which is the most downvoted definition?  
 
-**Moderate**
+**Moderate**  
 7. Which all tags are most widely used?  
 8. Which word has with highest number of meanings?    
 9a. Which word has with highest number of meanings?   
