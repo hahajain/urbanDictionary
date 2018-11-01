@@ -1,7 +1,7 @@
 # urbanDictionary
 Analysing urban Dictionary with Mongo, Elasticsearch and Kafka.
 
-Analytical questions:
+Analytical questions we attempt to answer:
 
 **Easy**
 1. Check if critical fields exist in all documents  
