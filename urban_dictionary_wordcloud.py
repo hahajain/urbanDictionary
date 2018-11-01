@@ -40,19 +40,19 @@ def mongo_query_to_wordcloud(pipeline_dict):
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.show()
 
-# Query 11 - Most popular tags
-query11 = [
+# Query 8 - Most widely used tags
+query8 = [
     {"$unwind" : "$tags"},
     {"$sortByCount" : "$tags"}
   ]
 
-mongo_query_to_wordcloud(query11)
+mongo_query_to_wordcloud(query8)
 
-# query 9a - words with highest number of meanings
-query9a =  [
+# query 9 - words with highest number of definitions
+query9 =  [
     {"$group": {"_id" : "$lowercase_word", "count": { "$sum": 1 }}},
     {"$sort": {"count":-1}}
   ]
 
-mongo_query_to_wordcloud(query9a)
+mongo_query_to_wordcloud(query9)
 
