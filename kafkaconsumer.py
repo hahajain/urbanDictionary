@@ -1,7 +1,7 @@
-from kafka import KafkaConsumer, KafkaProducer
-from pickle import loads, dumps
 import time
 import requests
+from kafka import KafkaConsumer, KafkaProducer
+from pickle import loads, dumps
 from datetime import datetime
 
 
