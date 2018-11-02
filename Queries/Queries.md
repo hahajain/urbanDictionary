@@ -24,7 +24,7 @@ def filter_words(l, name, count):
 
 sns.set(style="whitegrid")
 client = MongoClient("localhost:27017")
-collection = client.Urbaner.dictionary
+collection = client.UrbanDictionary.updated_dictionary
 
 bad_words = ["sexy", "fuck", "bitch", "ass", "penis", "vagina", "shit", "cunt", "gay", "nigger", "asshole",
              "anal", "anus", "blowjob", "whore", "slut", "pussy", "cock", "boner", "cum", "dick",
