@@ -30,68 +30,70 @@ bad_words = ["sexy", "fuck", "bitch", "ass", "penis", "vagina", "shit", "cunt", 
              "anal", "anus", "blowjob", "whore", "slut", "pussy", "cock", "boner", "cum", "dick",
              "fag", "faggot", "ho", "hoe", "homo", "jizz", "nigga", "tits", "porn", "orgasm", "feminism",
              "skank", "poop", "booty", "balls", "crap", "fart", "boobs", "butt", "black",
-             "asian", "sex", "fucktard", "chode", "gate rape", "muslim", "feminist", "Anonymous", "anonymous", "rape", "islam"]
+             "asian", "sex", "fucktard", "chode", "gate rape", "muslim", "feminist", "Anonymous",
+             "anonymous", "rape", "islam"]
 ```
 
 
 ```python
-# Query 1
+# Query 1: Do critical fields exist in all documents?
 l = ["_id", "lowercase_word", "tags", "thumbs_up", "thumbs_down", "author"]
 
 for i in l:
-    print(collection.count_documents({i : {"$exists" : False}}))
+    print("{} - {} ".format(i, collection.count_documents({i : {"$exists" : False}})))
 ```
 
-    0
-    0
-    0
-    0
-    0
-    0
+    _id - 0 
+    lowercase_word - 0 
+    tags - 0 
+    thumbs_up - 0 
+    thumbs_down - 0 
+    author - 0 
 
 
 
 ```python
-# Query 2
+# Query 2: Are the critical fields NULL or empty?
 l = ["_id", "lowercase_word", "tags", "thumbs_up", "thumbs_down", "author"]
 
 for i in l:
-    print(collection.count_documents({i : None}))
+    print("{} - {} ".format(i, collection.count_documents({i : None})))
 
-print(collection.count_documents({"tags":[]}))
+print("Number of documents with empty tags field: ", collection.count_documents({"tags":[]}))
 ```
 
-    0
-    0
-    0
-    0
-    0
-    0
-    734948
+    _id - 0 
+    lowercase_word - 0 
+    tags - 0 
+    thumbs_up - 0 
+    thumbs_down - 0 
+    author - 0 
+    Number of documents with empty tags field:  734948
 
 
 
 ```python
-# Query 3
-print(collection.count_documents({"_id" : { "$not" : {"$type" : "objectId"}}}))
-print(collection.count_documents({"lowercase_word" : { "$not" : {"$type" : "string"}}}))
-print(collection.count_documents({"tags" : { "$not" : {"$type" : "array"}}}))
-print(collection.count_documents({"thumbs_up" : { "$not" : {"$type" : "int"}}}))
-print(collection.count_documents({"thumbs_down" : { "$not" : {"$type" : "int"}}}))
-print(collection.count_documents({"author" : { "$not" : {"$type" : "string"}}}))
+# Query 3: Is the data type of each field correct?
+print("_id - {}".format(collection.count_documents({"_id" : { "$not" : {"$type" : "objectId"}}})))
+print("lowercase_word - {}".format(collection.count_documents(
+    {"lowercase_word" : { "$not" : {"$type" : "string"}}})))
+print("tags - {}".format(collection.count_documents({"tags" : { "$not" : {"$type" : "array"}}})))
+print("thumbs_up - {}".format(collection.count_documents({"thumbs_up" : { "$not" : {"$type" : "int"}}})))
+print("thumbs_down - {}".format(collection.count_documents({"thumbs_down" : { "$not" : {"$type" : "int"}}})))
+print("author - {}".format(collection.count_documents({"author" : { "$not" : {"$type" : "string"}}})))
 ```
 
-    0
-    0
-    0
-    0
-    0
-    0
+    _id - 0
+    lowercase_word - 0
+    tags - 0
+    thumbs_up - 0
+    thumbs_down - 0
+    author - 0
 
 
 
 ```python
-# Query 4
+# Query 4: What are the most upvoted definitions?
 result = collection.find(
     {}, {"_id":0, "lowercase_word":1, "thumbs_up":1}).sort(
     "thumbs_up", pm.DESCENDING).limit(100)
@@ -106,7 +108,7 @@ draw_barplot(counts[0:15], names[0:15], "Count", "Most upvoted definitions")
 
 
 ```python
-# Query 5
+# Query 5: What are the most downvoted definitions?
 result = collection.find(
     {}, {"_id":0, "lowercase_word":1, "thumbs_down":1}).sort(
     "thumbs_down", pm.DESCENDING).limit(100)
@@ -121,7 +123,7 @@ draw_barplot(counts[0:15], names[0:15], "Count", "Most downvoted definitions")
 
 
 ```python
-# Query 6
+# Query 6: Who are the users who have written the highest number of meanings?
 pipeline = [{"$sortByCount" : "$author"}, {"$limit":30}]
 result = collection.aggregate(pipeline, allowDiskUse = True)
 result_to_list = list(result)
@@ -135,7 +137,7 @@ draw_barplot(counts[0:15], names[0:15], "Count", "User with highest number of me
 
 
 ```python
-# Query 7
+# Query 7: What are the words that have the highest number of meanings?
 pipeline = [{"$sortByCount" : "$lowercase_word"}, {"$limit":1000}]
 result = collection.aggregate(pipeline, allowDiskUse = True)
 result_to_list = list(result)
@@ -169,7 +171,9 @@ plt.axis("off")
 
 
 ```python
-# Query 8
+# Query 8: Which words have the overall highest number of upvotes?
+#(Includes definitions written by multiple users)
+
 pipeline = [
     {
       "$group": {
@@ -193,7 +197,9 @@ draw_barplot(counts[0:15], names[0:15], "Count", "Words with highest number of u
 
 
 ```python
-# Query 9
+# Query 9: Which words have the overall highest number of downvotes?
+# (Includes definitions written by multiple users)
+
 pipeline = [
     {
       "$group": {
@@ -218,7 +224,7 @@ draw_barplot(counts[0:15], names[0:15], "Count", "Words with highest number of d
 
 
 ```python
-# Query 10
+# Query 10: What are the most popular tags? (Popular = have most words)
 pipeline =   [
     {
       "$group": {
@@ -242,7 +248,7 @@ draw_barplot(counts[0:15], names[0:15], "Number of words", "Tags")
 
 
 ```python
-# Query 11
+# Query 11: What are the most successful tags? (Successful = have words with most upvotes)
 pipeline =  [
     {"$unwind":"$tags"},
     {
@@ -259,14 +265,7 @@ result = collection.aggregate(pipeline, allowDiskUse = True)
 result_to_list = list(result)
 names, counts = filter_words(result_to_list, "_id", "total_upvotes")
 draw_barplot(counts[0:15], names[0:15], "Number of upvotes", "Tags")
-```
 
-
-![png](output_11_0.png)
-
-
-
-```python
 count_dict = {}
 for i in result_to_list:
     count_dict[i["_id"]] = i["total_upvotes"]
@@ -285,13 +284,18 @@ plt.axis("off")
 
 
 
-![png](output_12_1.png)
+![png](output_11_1.png)
+
+
+
+![png](output_11_2.png)
 
 
 
 ```python
-# Query 12
-pprint(list(collection.find({"lowercase_word":"love"}, {"definition":1, "ratio":1, "_id":0}).sort("ratio", pm.DESCENDING).limit(5)))
+# Query 12: Based on number of upvotes and downvotes, how can we rank the meanings of a particular word?
+pprint(list(collection.find(
+    {"lowercase_word":"love"}, {"definition":1, "ratio":1, "_id":0}).sort("ratio", pm.DESCENDING).limit(5)))
 ```
 
     [{'definition': 'A misunderstanding between two fools.',
