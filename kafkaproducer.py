@@ -10,7 +10,7 @@ producer = KafkaProducer(bootstrap_servers=['ec2-52-24-5-219.us-west-2.compute.a
 
 # Connect to database on AWS
 client = MongoClient('mongodb://ec2-52-24-5-219.us-west-2.compute.amazonaws.com:27017')
-collection = client.Urbaner.dictionary
+collection = client.UrbanDictionary.dictionary
 
 # Publish data on a Kafka topic called raw_documents
 for e in collection.find():
