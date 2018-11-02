@@ -1,6 +1,8 @@
 # Analysing Urban Dictionary Data using MongoDB, Elasticsearch and Kafka.
 
-Analytical questions that we answered:
+## Queries
+
+Answers to the queries for the POC can be found in the [Queries.md](Queries/Queries.md) file. Analytical questions that we answered:
 
 **Easy**
 
@@ -23,3 +25,11 @@ Analytical questions that we answered:
 
 12. Based on number of upvotes and downvotes, how can we rank the meanings of a particular word?  
 13. How do Urbaners relate words, i.e., which words are synonymous?
+
+## Data Pipeline
+
+Files related to data pipeline can be found in the [Data Pipeline](Data Pipeline/) folder.
+
+## Elasticsearch
+
+Files related to Elasticsearch can be found in the [Elasticsearch](Elasticsearch/) folder.
