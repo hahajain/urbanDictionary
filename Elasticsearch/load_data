@@ -142,8 +142,6 @@ curl -X PUT "localhost:9200/synoindex/doc/58?pretty" -H 'Content-Type: applicati
 	"thumbs_down" : 22
 }'
 
-
-
 curl -X PUT "localhost:9200/synoindex/doc/55?pretty" -H 'Content-Type: application/json' -d'
 {
 	"defid" : 298833,
