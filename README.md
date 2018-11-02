@@ -28,7 +28,7 @@ Answers to the queries for the POC can be found in the [Queries.md](Queries/Quer
 
 ## Data Pipeline
 
-Files related to data pipeline can be found in the [Data Pipeline](Data Pipeline/) folder.
+Files related to data pipeline can be found in the [Data Pipeline]("Data Pipeline"/) folder.
 
 ## Elasticsearch
 
