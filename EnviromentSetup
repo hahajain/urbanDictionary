@@ -37,6 +37,7 @@ Elasticsearch
 Kafka
 
 Kafka uses ZooKeeper. So it is necessary to starta ZooKeeper server before running Kafka. It also requires Java to be installed prior.
+Download Kafka and type the following command on the terminal inside the Kafka directory to start Zookeeper:
 > bin/zookeeper-server-start.sh config/zookeeper.properties
 
 Insert the following environment variable to adjust the JVM heap size to handle memory limitations
@@ -49,3 +50,6 @@ Create topics
 > bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 4 --topic raw_documents
 > bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 4 --topic enriched_documents
 
+Libraries
+
+We used PyMongo and Kafka Python API to interface MongoDB and Kafka with Python
