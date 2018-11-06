@@ -1,3 +1,4 @@
+#Following code adds data to elastic for synonym tokenizer
 curl -X PUT "localhost:9200/synoindex/doc/1?pretty" -H 'Content-Type: application/json' -d'
 {
 	"defid" : 8093865,
