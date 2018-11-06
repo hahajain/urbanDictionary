@@ -1,3 +1,4 @@
+#Following code adds a custom analyzer for complex queries
 $ curl -XPUT 'localhost:9200/synoindex/?pretty' -H 'Content-Type: application/json' -d'
 {
     "settings": {
